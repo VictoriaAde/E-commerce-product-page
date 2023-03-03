@@ -1,5 +1,10 @@
-@mixin media($screen) {
+@mixin mediaMin($screen) {
   @media (min-width: $screen) {
+    @content;
+  }
+}
+@mixin mediaMax($screen) {
+  @media (max-width: $screen) {
     @content;
   }
 }

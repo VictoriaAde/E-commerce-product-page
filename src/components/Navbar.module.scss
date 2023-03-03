@@ -1,16 +1,46 @@
 @use "../styles/functions.scss" as *;
 
-.mobilenavbar {
+.heading {
+  color: var(--white);
+}
+.mobileNavbar {
   display: flex;
   justify-content: space-between;
-  background-color: var(--dark-grayish-blue);
 
-  @include media(750px) {
+  @include mediaMin(750px) {
     display: none;
   }
 
   div {
     padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.desktopNavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  @include mediaMax(750px) {
+    display: none;
+  }
+  ul {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  div {
     display: flex;
     align-items: center;
     gap: 1rem;
