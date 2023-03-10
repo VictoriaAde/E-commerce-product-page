@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./Navbar.module.scss";
+import styles from "../styles/Navbar.module.scss";
 import utilStyles from "../styles/utils.module.scss";
 
 export const MobileNavbar = () => {
