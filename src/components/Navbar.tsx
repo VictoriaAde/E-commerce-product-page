@@ -33,13 +33,6 @@ export const MobileNavbar = () => {
           alt="avatar"
         />
       </div>
-      {/* <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul> */}
     </nav>
   );
 };
@@ -47,7 +40,7 @@ export const MobileNavbar = () => {
 export const DesktopNavbar = () => {
   return (
     <nav className={styles.desktopNavbar}>
-      <h1 className="heading">Sneakers</h1>
+      <h1 className={styles.headingh1}>Sneakers</h1>
 
       <ul>
         <li>

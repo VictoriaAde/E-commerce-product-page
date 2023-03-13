@@ -1,3 +1,104 @@
+@use "./functions.scss" as *;
+
+.contentCon {
+  @include mediaMin(750px) {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    padding: 0 3rem;
+  }
+  @include mediaMin(1015px) {
+    padding: 0 8rem;
+  }
+}
+.productDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  div.image {
+    background: url(../../public/images/image-product-1.jpg);
+    width: 400px;
+    height: 398px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @include mediaMin(750px) {
+      border-radius: 20px 20px;
+    }
+  }
+}
+
 .productDescription {
-  background-color: red;
+  margin-bottom: 2rem;
+  padding: 0 1.2rem;
+  background-color: hsl(0, 0%, 100%);
+  h2 {
+    color: hsl(26, 100%, 55%);
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+  }
+  h1 {
+    color: hsl(220, 13%, 13%);
+    font-size: 1.6rem;
+    margin-bottom: 0.7rem;
+  }
+  p {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  div {
+    margin-bottom: 2rem;
+
+    span:nth-child(1) {
+      color: hsl(220, 13%, 13%);
+      font-size: 1.7rem;
+      font-weight: bold;
+      margin-right: 1rem;
+    }
+    span:nth-child(2) {
+      color: hsl(26, 100%, 55%);
+      font-size: 1rem;
+      font-weight: bold;
+      margin-right: 4.5rem;
+    }
+    span:nth-child(3) {
+      color: hsl(220, 13%, 13%);
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: line-through;
+    }
+  }
+  .addOrRemoveItem {
+    color: hsl(220, 13%, 13%);
+    font-weight: bold;
+    padding: 0 1rem;
+    display: flex;
+    font-size: 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  button {
+    background-color: hsl(26, 100%, 55%);
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+    font-size: 0.9rem;
+    width: 100%;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+    .btnCartIcon {
+      color: hsl(0, 0%, 100%) !important;
+    }
+  }
 }

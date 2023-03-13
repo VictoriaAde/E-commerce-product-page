@@ -1,7 +1,7 @@
 @use "./functions.scss" as *;
 
-.heading {
-  color: var(--white);
+.headingh1 {
+  color: hsl(220, 13%, 13%);
 }
 .mobileNavbar {
   display: flex;
@@ -37,6 +37,10 @@
       list-style: none;
       a {
         text-decoration: none;
+        color: hsl(219, 9%, 45%);
+        &:hover {
+          color: hsl(220, 13%, 13%);
+        }
       }
     }
   }
