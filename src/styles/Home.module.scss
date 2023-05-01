@@ -79,6 +79,13 @@
     font-size: 1rem;
     justify-content: space-between;
     align-items: center;
+
+    > div {
+      cursor: pointer;
+      padding: 0.6rem;
+      border: 0.1px dotted #a39f9f;
+      margin-bottom: 0;
+    }
   }
 
   button {

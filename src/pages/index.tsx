@@ -4,10 +4,25 @@ import { Inter } from "@next/font/google";
 import { DesktopNavbar, MobileNavbar } from "@/components/Navbar";
 import styles from "../styles/Home.module.scss";
 import Image from "next/image";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [quantity, setQuantity] = useState(0);
+
+  const handleIncrement = () => {
+    if (quantity < 20) {
+      setQuantity(quantity + 1);
+    }
+  };
+
+  const handleDecrement = () => {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -53,21 +68,25 @@ export default function Home() {
               <span> $250.00</span>
             </div>
             <div className={styles.addOrRemoveItem}>
-              <Image
-                priority
-                src="/icons/icon-minus.svg"
-                height={5}
-                width={13}
-                alt="icon menu"
-              />
-              0
-              <Image
-                priority
-                src="/icons/icon-plus.svg"
-                height={13}
-                width={13}
-                alt="icon menu"
-              />
+              <div onClick={handleDecrement}>
+                <Image
+                  priority
+                  src="/icons/icon-minus.svg"
+                  height={6}
+                  width={14}
+                  alt="icon menu"
+                />
+              </div>
+              {quantity}
+              <div onClick={handleIncrement}>
+                <Image
+                  priority
+                  src="/icons/icon-plus.svg"
+                  height={15}
+                  width={15}
+                  alt="icon menu"
+                />
+              </div>
             </div>
             <button>
               {" "}
