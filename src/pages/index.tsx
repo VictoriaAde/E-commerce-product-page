@@ -37,21 +37,25 @@ export default function Home() {
 
         <div className={styles.contentCon}>
           <section className={styles.productDisplay}>
-            <div className={styles.image}>
-              <Image
-                priority
-                src="/icons/icon-previous.svg"
-                height={13}
-                width={13}
-                alt="icon menu"
-              />{" "}
-              <Image
-                priority
-                src="/icons/icon-next.svg"
-                height={13}
-                width={13}
-                alt="icon menu"
-              />
+            <div className={styles.imageDiv}>
+              <div className={styles.iconCircle1}>
+                <Image
+                  priority
+                  src="/icons/icon-previous.svg"
+                  height={10}
+                  width={10}
+                  alt="icon menu"
+                />
+              </div>
+              <div className={styles.iconCircle2}>
+                <Image
+                  priority
+                  src="/icons/icon-next.svg"
+                  height={10}
+                  width={10}
+                  alt="icon menu"
+                />
+              </div>
             </div>
           </section>
           <section className={styles.productDescription}>
@@ -89,7 +93,6 @@ export default function Home() {
               </div>
             </div>
             <button>
-              {" "}
               <Image
                 className={styles.btnCartIcon}
                 priority

@@ -19,15 +19,39 @@
   justify-content: center;
   position: relative;
 
-  div.image {
+  div.imageDiv {
     background: url(../../public/images/image-product-1.jpg);
     width: 400px;
     height: 398px;
     background-size: contain;
     background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     @include mediaMin(750px) {
       border-radius: 20px 20px;
     }
+  }
+  .iconCircle1 {
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .iconCircle2 {
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
