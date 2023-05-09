@@ -10,6 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [quantity, setQuantity] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleIncrement = () => {
     if (quantity < 20) {
@@ -21,6 +22,27 @@ export default function Home() {
     if (quantity > 0) {
       setQuantity(quantity - 1);
     }
+  };
+
+  const slideImages = [
+    "/images/image-product-1.jpg",
+    "/images/image-product-2.jpg",
+    "/images/image-product-3.jpg",
+    "/images/image-product-4.jpg",
+  ];
+
+  const goToPrevSlide = () => {
+    const newPointer =
+      currentIndex === 0 ? slideImages.length - 1 : currentIndex - 1;
+
+    setCurrentIndex(newPointer);
+  };
+
+  const goToNextSlide = () => {
+    const newPointer =
+      currentIndex === slideImages.length - 1 ? 0 : currentIndex + 1;
+
+    setCurrentIndex(newPointer);
   };
 
   return (
@@ -37,24 +59,35 @@ export default function Home() {
 
         <div className={styles.contentCon}>
           <section className={styles.productDisplay}>
-            <div className={styles.imageDiv}>
-              <div className={styles.iconCircle1}>
-                <Image
-                  priority
-                  src="/icons/icon-previous.svg"
-                  height={10}
-                  width={10}
-                  alt="icon menu"
-                />
-              </div>
-              <div className={styles.iconCircle2}>
-                <Image
-                  priority
-                  src="/icons/icon-next.svg"
-                  height={10}
-                  width={10}
-                  alt="icon menu"
-                />
+            <div>
+              <Image
+                className={styles.productImage}
+                priority
+                src={slideImages[currentIndex]}
+                width={350}
+                height={360}
+                alt="product - sneakers"
+              />
+
+              <div className={styles.iconCircleDiv}>
+                <div className={styles.iconCircle1} onClick={goToPrevSlide}>
+                  <Image
+                    priority
+                    src="/icons/icon-previous.svg"
+                    width={10}
+                    height={10}
+                    alt="icon menu"
+                  />
+                </div>
+                <div className={styles.iconCircle2} onClick={goToNextSlide}>
+                  <Image
+                    priority
+                    src="/icons/icon-next.svg"
+                    width={10}
+                    height={10}
+                    alt="icon menu"
+                  />
+                </div>
               </div>
             </div>
           </section>
